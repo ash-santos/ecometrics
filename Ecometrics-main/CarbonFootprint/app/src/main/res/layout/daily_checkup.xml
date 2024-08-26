@@ -1,0 +1,1444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/appIcon"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ecometrics_first_time_house"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appIcon" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appIcon">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutHouse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/housePageTitle"
+                    style="@style/FirstTimeSignInTextTitle"
+                    android:text="House"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/housePageTitle">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TableLayout
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="@color/colorPrimary" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="16dp">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="Do you have your monthly Electricity bill for this month?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnElectricityBillYes"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="Yes" />
+
+                                <Button
+                                    android:id="@+id/btnElectricityBillNo"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="No" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblHouseQuestion2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="Do you know your total amount electricity used per month in kwh?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblHouseQuestionYesNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <Button
+                                    android:id="@+id/btnElectricityYes"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="Yes"/>
+
+                                <Button
+                                    android:id="@+id/btnElectricityNo"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="No" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowElectricity1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:id="@+id/lblHouseQuestion1_1"
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="What is your total amount electricity used this month in kWh?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowElectricity2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <EditText
+                                    android:id="@+id/txtElectricityAmount"
+                                    style="@style/FirstTimeSignInEditText"
+                                    android:hint="Enter the amount here"
+                                    android:inputType="number|numberDecimal" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowElectricity3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:id="@+id/lblHouseQuestion1_2"
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="How much is your electricity bill this month?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowElectricity4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <EditText
+                                    android:id="@+id/txtElectricityBill"
+                                    style="@style/FirstTimeSignInEditText"
+                                    android:hint="Enter the Electricity Bill Here"
+                                    android:inputType="number|numberDecimal" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblElectricityEmission"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="16dp"
+                                    android:visibility="invisible" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="@color/colorPrimary" />
+                            </TableRow>
+
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="16dp">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="Did you used charcoal today?"/>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnCoalYes"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="Yes" />
+
+                                <Button
+                                    android:id="@+id/btnCoalNo"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="No" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowCoal1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/lblHouseQuestion3_1"
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="How much charcoal did you used today?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowCoal2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/txtCharcoalBill"
+                                    style="@style/FirstTimeSignInEditText"
+                                    android:hint="Enter the total spent in charcoal Here"
+                                    android:inputType="number|numberDecimal" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblCharcoalEmission"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="16dp"
+                                    android:visibility="invisible" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="@color/colorPrimary" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="16dp">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="Did you used firewood today?"/>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnFirewoodYes"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="Yes" />
+
+                                <Button
+                                    android:id="@+id/btnFirewoodNo"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="No" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowFirewood1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="gone">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="How many firewood did you used today?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowFirewood2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/txtFirewoodBill"
+                                    style="@style/FirstTimeSignInEditText"
+                                    android:hint="Enter the amount of firewood in kg you used here"
+                                    android:inputType="number|numberDecimal" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblFirewoodEmission"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="16dp"
+                                    android:visibility="invisible" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="@color/colorPrimary" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="16dp">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="Did you buy an LPG tank today?"
+                                    android:textSize="20dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnLpgYes"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="Yes" />
+
+                                <Button
+                                    android:id="@+id/btnLpgNo"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="No" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowLpg3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/lblHouseQuestion4_2"
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="How many kilogram(Kg) did you bought?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowLpg4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/txtLpgWeight"
+                                    style="@style/FirstTimeSignInEditText"
+                                    android:hint="Enter the total weight of the LPG"
+                                    android:inputType="number|numberDecimal" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowLpg1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/lblHouseQuestion4_1"
+                                    style="@style/FirstTimeSignInText"
+                                    android:text="How much did you spent in LPG?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowLpg2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/txtLpgBill"
+                                    style="@style/FirstTimeSignInEditText"
+                                    android:hint="Enter the total spent in LPG Here"
+                                    android:inputType="number|numberDecimal" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblLPGEmission"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="16dp"
+                                    android:visibility="invisible" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="@color/colorPrimary" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblHouseTotalEmission"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textSize="16dp"
+                                    android:visibility="invisible" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <Button
+                            android:id="@+id/btnSubmitHouse"
+                            style="@style/FirstTimeSignInButtonSubmit"
+                            android:text="NEXT"/>
+                    </LinearLayout>
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutFood"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/foodPageTitle"
+                    style="@style/FirstTimeSignInTextTitle"
+                    android:text="Food"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/foodPageTitle">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/FirstTimeSignInTextTitle"
+                            android:text="What are the foods you eat per month?"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            style="@style/FirstTimeSignInText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="Food Category" />
+
+
+                        <Spinner
+                            android:id="@+id/spinnerFoodCategory"
+                            style="@style/FirstTimeSignInSpinner"
+                            android:layout_marginHorizontal="16dp"
+                            android:entries="@array/spinner_food_category" />
+
+
+                        <TableLayout
+                            android:id="@+id/tblFoodQuestions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="16dp"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Food"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="20dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <Spinner
+                                    android:id="@+id/spinnerFoodName"
+                                    style="@style/FirstTimeSignInSpinner"
+                                    android:entries="@array/spinner_transportation" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowPriceQuestion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInVehicleText"
+                                    android:text="Do you know the price of this food?"
+                                    android:textSize="20sp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowPriceAnswer"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnFoodPriceYes"
+                                    style="@style/FirstTimeSignInVehicleButtonHalf"
+                                    android:text="Yes" />
+
+                                <Button
+                                    android:id="@+id/btnFoodPriceNo"
+                                    style="@style/FirstTimeSignInVehicleButtonHalf"
+                                    android:text="No" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFoodPrice"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <EditText
+                                        android:id="@+id/txtFoodPrice"
+                                        style="@style/FirstTimeSignInVehicleEditText"
+                                        android:layout_weight=".9"
+                                        android:focusable="auto"
+                                        android:hint="Enter Food Price Here"
+                                        android:inputType="number" />
+
+                                    <TextView
+                                        style="@style/FirstTimeSignInVehicleText"
+                                        android:layout_width="75dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="center"
+                                        android:text="per kg" />
+                                </LinearLayout>
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowQuestionAmountFood"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="How much do you spend?"
+                                    android:textSize="20dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tblRowFoodAmount"
+                                android:layout_width="0dip"
+                                android:layout_height="fill_parent">
+
+                                <ImageView
+                                    android:id="@+id/iconFoodCategory"
+                                    android:layout_width="0dip"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight=".2"
+                                    app:tint="@color/greenBackground"
+                                    app:srcCompat="@mipmap/icon_bus" />
+
+                                <EditText
+                                    android:id="@+id/txtFoodBill"
+                                    android:layout_width="0dip"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:ems="10"
+                                    android:hint="How much do you spend?"
+                                    android:inputType="number|numberDecimal" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblFoodEmission"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textSize="16dp"
+                                    android:visibility="invisible" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <Button
+                                    android:id="@+id/btnInsertFood"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:layout_weight="1"
+                                    android:text="INSERT FOOD" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            android:id="@+id/tblFoodList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_background"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="10dp">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center">
+
+                                    <TextView
+                                        style="@style/FirstTimeSignInText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight=".5"
+                                        android:text="Food"
+                                        android:textAlignment="center"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        style="@style/FirstTimeSignInText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight=".5"
+                                        android:text="Amount"
+                                        android:textAlignment="center"
+                                        android:textStyle="bold" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginVertical="4dp"
+                                        android:background="@android:color/black" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/recyclerViewFood"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:scrollbars="vertical" />
+                                </TableRow>
+                            </LinearLayout>
+
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblFoodTotalEmission"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textSize="16dp"
+                                    android:visibility="invisible" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:id="@+id/btnDeleteFood"
+                                        style="@style/FirstTimeSignInFoodButton"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".40"
+                                        android:backgroundTint="@color/red"
+                                        android:text="Remove" />
+
+                                    <TextView
+                                        style="@style/FirstTimeSignInText"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".35"
+                                        android:text="the item #"
+                                        android:textAlignment="center"
+                                        android:textStyle="bold" />
+
+                                    <EditText
+                                        android:id="@+id/txtFoodNumber"
+                                        style="@style/FirstTimeSignInText"
+                                        android:textAlignment="center"
+                                        android:textStyle="bold"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".25"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="number" />
+                                </LinearLayout>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnSubmitFood"
+                                    style="@style/FirstTimeSignInFoodButtonSubmit"
+                                    android:layout_weight="1"
+                                    android:text="NEXT" />
+                            </TableRow>
+                        </TableLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/vehicleNumber"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".1"
+                                android:visibility="invisible"/>
+                            <TextView
+                                android:id="@+id/vehiclePageTitle"
+                                style="@style/FirstTimeSignInTextTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_weight=".8"
+                                android:text="Vehicle"/>
+                            <TextView
+                                android:id="@+id/vehicleIndex"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".1"
+                                android:visibility="invisible"/>
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableLayout
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"/>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    style="@style/DailyViewText"
+                                    android:text="Name: "/>
+
+                                <TextView
+                                    android:id="@+id/txtVehicleName"
+                                    style="@style/DailyEditText"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <TextView
+                                    style="@style/DailyViewText"
+                                    android:text="Model: "/>
+
+                                <TextView
+                                    android:id="@+id/txtVehicleModel"
+                                    style="@style/DailyEditText"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <TextView
+                                    style="@style/DailyViewText"
+                                    android:text="Transmission: "/>
+
+                                <TextView
+                                    android:id="@+id/txtVehicleTransmisison"
+                                    style="@style/DailyEditText"/>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <TextView
+                                    style="@style/DailyViewText"
+                                    android:text="Size: "/>
+
+                                <TextView
+                                    android:id="@+id/txtVehicleSize"
+                                    style="@style/DailyEditText"/>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    style="@style/DailyViewText"
+                                    android:text="Fuel: "/>
+
+                                <TextView
+                                    android:id="@+id/txtFuelType"
+                                    style="@style/DailyEditText"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/txtEfficiency"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:textSize="16dp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:layout_weight="1"
+                                    android:text="Do you ride this vehicle today?"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnVehicleYes"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="Yes"/>
+
+                                <Button
+                                    android:id="@+id/btnVehicleNo"
+                                    style="@style/FirstTimeSignInButtons"
+                                    android:text="No"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblVehicleUsage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="false"
+                                    android:textSize="16dp"
+                                    android:visibility="invisible" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowVehicle1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/FirstTimeSignInText"
+                                        android:text="How many person ride this vehicle? (including you)"/>
+
+                                    <EditText
+                                        android:id="@+id/txtVehiclePassengerCount"
+                                        style="@style/FirstTimeSignInEditText"
+                                        android:layout_width="match_parent"
+                                        android:focusable="auto"
+                                        android:hint="Enter Passenger Number Here"
+                                        android:inputType="number" />
+
+                                </LinearLayout>
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowVehicle2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    style="@style/DailyViewText"
+                                    android:layout_weight=".3"
+                                    android:text="Old Odometer: "/>
+
+                                <TextView
+                                    android:id="@+id/txtOldOdometer"
+                                    style="@style/DailyEditText"
+                                    android:layout_weight=".4"/>
+
+                                <TextView
+                                    style="@style/DailyViewText"
+                                    android:layout_weight=".3"
+                                    android:text="km"/>
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowVehicle3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/FirstTimeSignInText"
+                                        android:text="What is the new odometer reading of this vehicle?"/>
+
+                                    <EditText
+                                        android:id="@+id/txtNewOdometer"
+                                        style="@style/FirstTimeSignInEditText"
+                                        android:layout_width="match_parent"
+                                        android:hint="Enter new odometer reading in km here"
+                                        android:inputType="number"/>
+                                </LinearLayout>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+                                <Button
+                                    android:id="@+id/btnSubmitVehicle"
+                                    android:layout_weight="1"
+                                    style="@style/FirstTimeSignInButtonSubmit"
+                                    android:text="NEXT"/>
+
+                            </TableRow>
+                        </TableLayout>
+                    </ScrollView>
+                    <TextView
+                        android:id="@+id/lblVehicleTotalEmission"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:visibility="invisible" />
+                    <TextView
+                        android:id="@+id/lblVehicleEmission"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:visibility="invisible" />
+                    <TextView
+                        android:id="@+id/lblUnleadedEmission"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:visibility="invisible" />
+                    <TextView
+                        android:id="@+id/lblDieselEmission"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:visibility="invisible" />
+                    <TextView
+                        android:id="@+id/lblPremiumEmission"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutTransportation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/travelPageTitle"
+                    style="@style/FirstTimeSignInTextTitle"
+                    android:text="Travel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/travelPageTitle">
+
+                    <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/FirstTimeSignInText"
+                        android:text="Transportation Method"
+                        android:layout_marginHorizontal="16dp"
+                        android:textAlignment="center" />
+
+                    <Spinner
+                        android:id="@+id/spinnerTransportation"
+                        style="@style/FirstTimeSignInSpinner"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_width="296dp"
+                        android:layout_height="36dp"
+                        android:entries="@array/spinner_transportation"/>
+
+                    <TableLayout
+                        android:id="@+id/tblQuestions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TableRow
+                            android:id="@+id/tblRowQuestionAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                style="@style/FirstTimeSignInText"
+                                android:text="How much do you spend?" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tblRowAmount"
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent">
+
+                            <ImageView
+                                android:id="@+id/iconTravelCategory"
+                                android:layout_width="0dip"
+                                android:layout_height="fill_parent"
+                                android:layout_weight=".2"
+                                app:tint="@color/greenBackground"
+                                app:srcCompat="@mipmap/new_icon_travel"/>
+
+                            <EditText
+                                android:id="@+id/txtTranportationBill"
+                                style="@style/FirstTimeSignInEditText"
+                                android:layout_width="0dip"
+                                android:layout_weight="1"
+                                android:hint="How much do you spend?"
+                                android:inputType="number|numberDecimal"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/lblTransportationEmission"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="16dp"
+                                android:visibility="invisible" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
+
+                            <Button
+                                android:id="@+id/btnInsertTransportation"
+                                style="@style/FirstTimeSignInButtons"
+                                android:text="INSERT VEHICLE" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <TableLayout
+                        android:id="@+id/tblTransportationList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_background"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="10dp">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".7"
+                                    android:text="Transportation"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".3"
+                                    android:text="Fare"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginVertical="4dp"
+                                    android:background="@android:color/black" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:scrollbars="vertical" />
+                            </TableRow>
+                        </LinearLayout>
+
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/lblTransportationTotalEmission"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="16dp"
+                                android:visibility="invisible" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btnDeleteTransportation"
+                                    style="@style/FirstTimeSignInFoodButton"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".40"
+                                    android:backgroundTint="@color/red"
+                                    android:text="Remove" />
+
+                                <TextView
+                                    style="@style/FirstTimeSignInText"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".35"
+                                    android:text="the item #"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/txtItemNumber"
+                                    style="@style/FirstTimeSignInText"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".25"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number" />
+                            </LinearLayout>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/btnSubmitTravel"
+                                style="@style/FirstTimeSignInButtonSubmit"
+                                android:layout_weight="1"
+                                android:text="SUBMIT" />
+                        </TableRow>
+                    </TableLayout>
+
+
+                    </LinearLayout>
+                </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLoading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/fake_loading_screen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Calculating Carbon Footprint"
+                    android:textAlignment="center"
+                    android:textSize="24dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

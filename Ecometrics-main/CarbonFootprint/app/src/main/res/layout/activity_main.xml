@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLoading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/loading_screen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp"
+                    app:srcCompat="@drawable/ecometric_calculating" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Loading"
+                    android:textAlignment="center"
+                    android:textSize="24dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutReport"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <TableLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/greenBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center">
+
+                    <TextView
+                        style="@style/ActivityMainReportText"
+                        android:text="Total Emission this" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDate"
+                        style="@style/ActivityMainReportSpinner"
+                        android:layout_marginLeft="8sp"
+                        android:entries="@array/date" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_span="2"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtMonthlyCarbonFootprint"
+                            style="@style/ActivityMainReportText"
+                            android:text="31.22 " />
+
+                        <TextView
+                            android:id="@+id/txtMonthlyCarbonFootprintUnit"
+                            style="@style/ActivityMainReportText"
+                            android:text="kg CO2e" />
+                    </LinearLayout>
+                </TableRow>
+
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/btnDailyCalculation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/background_box" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layoutEmissionNumber1"
+                            style="@style/MainCategoryEmissionLayout">
+
+                            <ImageView
+                                android:id="@+id/txtEmissionIconNumber1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/newGreen"
+                                app:srcCompat="@mipmap/new_icon_home" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionNameNumber1"
+                                        style="@style/MainCategoryEmissionName"
+                                        android:text="House" />
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionEmissionNumber1"
+                                        style="@style/MainCategoryEmissionEmission"
+                                        android:text="10000000000" />
+
+                                    <LinearLayout style="@style/MainCategoryEmissionUnitLayout">
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionUnitNumber1"
+                                            style="@style/MainCategoryEmissionUnit"
+                                            android:text="kg CO2e" />
+
+                                        <TextView style="@style/MainCategoryEmissionDash" />
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionPercentageNumber1"
+                                            style="@style/MainCategoryEmissionPercentage"
+                                            android:text="100.00%" />
+                                    </LinearLayout>
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBarNumber1"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:progressTint="@color/greenBackgroundLight"
+                                        android:scaleY="4" />
+                                </TableRow>
+                            </TableLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutEmissionNumber2"
+                            style="@style/MainCategoryEmissionLayout">
+
+                            <ImageView
+                                android:id="@+id/txtEmissionIconNumber2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/newGreen"
+                                app:srcCompat="@mipmap/new_icon_food" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionNameNumber2"
+                                        style="@style/MainCategoryEmissionName"
+                                        android:text="Food" />
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionEmissionNumber2"
+                                        style="@style/MainCategoryEmissionEmission"
+                                        android:text="100" />
+
+                                    <LinearLayout style="@style/MainCategoryEmissionUnitLayout">
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionUnitNumber2"
+                                            style="@style/MainCategoryEmissionUnit"
+                                            android:text="kg CO2e" />
+
+                                        <TextView style="@style/MainCategoryEmissionDash" />
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionPercentageNumber2"
+                                            style="@style/MainCategoryEmissionPercentage"
+                                            android:text="99.99%" />
+                                    </LinearLayout>
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBarNumber2"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:progressTint="@color/greenBackgroundLight"
+                                        android:scaleY="4" />
+                                </TableRow>
+                            </TableLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutEmissionNumber3"
+                            style="@style/MainCategoryEmissionLayout">
+
+                            <ImageView
+                                android:id="@+id/txtEmissionIconNumber3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/newGreen"
+                                app:srcCompat="@mipmap/new_icon_bus" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionNameNumber3"
+                                        style="@style/MainCategoryEmissionName"
+                                        android:text="vehicle" />
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionEmissionNumber3"
+                                        style="@style/MainCategoryEmissionEmission"
+                                        android:text="100" />
+
+                                    <LinearLayout style="@style/MainCategoryEmissionUnitLayout">
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionUnitNumber3"
+                                            style="@style/MainCategoryEmissionUnit"
+                                            android:text="kg CO2e" />
+
+                                        <TextView style="@style/MainCategoryEmissionDash" />
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionPercentageNumber3"
+                                            style="@style/MainCategoryEmissionPercentage"
+                                            android:text="99.99%" />
+                                    </LinearLayout>
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBarNumber3"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:progressTint="@color/greenBackgroundLight"
+                                        android:scaleY="4" />
+                                </TableRow>
+                            </TableLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutEmissionNumber4"
+                            style="@style/MainCategoryEmissionLayout">
+
+                            <ImageView
+                                android:id="@+id/txtEmissionIconNumber4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/newGreen"
+                                app:srcCompat="@mipmap/new_icon_travel" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionNameNumber4"
+                                        style="@style/MainCategoryEmissionName"
+                                        android:text="Transportation" />
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionEmissionNumber4"
+                                        style="@style/MainCategoryEmissionEmission"
+                                        android:text="100" />
+
+                                    <LinearLayout style="@style/MainCategoryEmissionUnitLayout">
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionUnitNumber4"
+                                            style="@style/MainCategoryEmissionUnit"
+                                            android:text="kg CO2e" />
+
+                                        <TextView style="@style/MainCategoryEmissionDash" />
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionPercentageNumber4"
+                                            style="@style/MainCategoryEmissionPercentage"
+                                            android:text="99.99%" />
+                                    </LinearLayout>
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBarNumber4"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:progressTint="@color/greenBackgroundLight"
+                                        android:scaleY="4" />
+                                </TableRow>
+                            </TableLayout>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnReportShowReccommendation"
+                            style="@style/ActivityMainReportButton"
+                            android:text="Show Recommendations" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnDailyCalculation"
+                style="@style/ActivityMainReportButton"
+                android:text="Daily Calculation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/greenBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_menu" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="33dp"
+            tools:visibility="gone">
+
+            <ScrollView
+                android:id="@+id/scrollViewProfileEditNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TimePicker
+                            android:id="@+id/timePicker"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="-30dp"
+                            android:layout_marginRight="-30dp"
+                            android:layout_weight="1"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:timePickerMode="spinner" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/btnSetNotificationTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Set Notification" />
+                    </TableRow>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/background_box_rounded_corners"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgUser"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:padding="3dp"
+                android:src="@mipmap/user_profile_temporary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:id="@+id/scrollViewProfileEditPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/ActivityMainProfileEditPasswordText"
+                            android:text="New Password" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/txtPassword"
+                            style="@style/ActivityMainProfileEditPasswordEditText"
+                            android:inputType="textVisiblePassword" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/ActivityMainProfileEditPasswordText"
+                            android:text="Confirm New Password" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <EditText
+                            android:id="@+id/txtConfirmPassword"
+                            style="@style/ActivityMainProfileEditPasswordEditText"
+                            android:inputType="textVisiblePassword" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/ActivityMainProfileEditPasswordText"
+                            android:text="Old Password" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/txtOldPassword"
+                            style="@style/ActivityMainProfileEditPasswordEditText"
+                            android:inputType="textVisiblePassword" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/buttonChangePassword"
+                            style="@style/ActivityMainProfileEditPasswordButton"
+                            android:text="Change Password" />
+                    </TableRow>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/scrollViewProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="900dp"
+                        android:background="@color/white">
+
+                        <TableRow
+                            android:id="@+id/rowEditProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_profile" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Edit Profile" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowEditPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_change_password" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Change Password" />
+
+                        </TableRow>
+
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            tools:visibility="gone">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_history" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Carbon Footprint History" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowNotification"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_notification" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Notification" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_setting" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Settings" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_feedback" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Feedback" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowLogOut"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_logout" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Log Out" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/scrollViewProfileEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:id="@+id/rowEditProfileDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_profile" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Edit Profile" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowEditProfilePassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                style="@style/ActivityMainProfileIcon"
+                                android:src="@mipmap/new_icon_change_password" />
+
+                            <TextView
+                                style="@style/ActivityMainProfileText"
+                                android:text="Change Password" />
+
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/lblUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Hello, Nel"
+                android:textColor="@color/greenBackgroundDarker2"
+                android:textSize="24dp"
+                app:layout_constraintStart_toEndOf="@+id/imgUser"
+                app:layout_constraintTop_toTopOf="@+id/imgUser" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/map_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/map_control"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <org.osmdroid.views.MapView
+                    android:id="@+id/map"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </org.osmdroid.views.MapView>
+
+                <TableLayout
+                    android:id="@+id/tblLegend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_span="2"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Emission Level"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/alpha_gradient_legend" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_weight=".5"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Low"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_weight=".5"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="High"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+
+                    </TableRow>
+                </TableLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableLayout
+                android:id="@+id/map_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_box"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="2"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_box"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        tools:ignore="UseSwitchCompatOrMaterialXml">
+
+                        <Switch
+                            android:id="@+id/switchLabelIconVisibility"
+                            android:layout_width="0dp"
+                            android:layout_height="43dp"
+                            android:layout_weight=".5"
+                            android:background="@drawable/background_box"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Hide Labels"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".190"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Monthly"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <Switch
+                            android:id="@+id/switchLabelIconDate"
+                            android:layout_width="0dp"
+                            android:layout_height="43dp"
+                            android:layout_gravity="center"
+                            android:layout_weight=".120"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".190"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Yearly"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/background_box"
+                        android:checkedButton="@+id/rbtnProvince"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rbtnProvince"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Province" />
+
+                        <RadioButton
+                            android:id="@+id/rbtnMunicipality"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Municipality" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:background="@drawable/background_box"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+                        app:layout_constraintTop_toTopOf="@+id/radioGroup">
+
+                        <Spinner
+                            android:id="@+id/spinnerSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp"
+                            android:fontFamily="@font/montserrat_regular" />
+
+                        <Spinner
+                            android:id="@+id/spinnerCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp"
+                            android:fontFamily="@font/montserrat_regular" />
+                    </LinearLayout>
+
+                </TableRow>
+            </TableLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+

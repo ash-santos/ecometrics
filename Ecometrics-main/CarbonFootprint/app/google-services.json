@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "109376855282",
+    "firebase_url": "https://ecometrics-a943a-default-rtdb.firebaseio.com",
+    "project_id": "ecometrics-a943a",
+    "storage_bucket": "ecometrics-a943a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109376855282:android:11fd7df5fb7ccbe331046b",
+        "android_client_info": {
+          "package_name": "com.example.carbonfootprint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109376855282-5fkr6aopcr8hc30pncg6uashnhns4t1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.carbonfootprint",
+            "certificate_hash": "a18e3c1b024b6f19979b4f353c792b6a0a56ca13"
+          }
+        },
+        {
+          "client_id": "109376855282-q3cqqmj5mqsbogrumofmc39as2s9cd8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcESrTD4nGd6hdS_2rWfMfKWJyqBZTkNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109376855282-q3cqqmj5mqsbogrumofmc39as2s9cd8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

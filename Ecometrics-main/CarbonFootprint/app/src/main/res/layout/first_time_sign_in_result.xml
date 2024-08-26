@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/appIconUserProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@mipmap/icon_app_test"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appIconUserProfile"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appIconUserProfile">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:visibility="gone">
+
+                <TableLayout
+                    android:id="@+id/tblTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtTotal"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="8dp"
+                            android:text="Your Total Carbon Emission is : " />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/lblTotalEmission"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:text="meters cube "
+                            android:textAlignment="center"
+                            android:textSize="24dp" />
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollViewResult"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintBottom_toTopOf="@id/btnShowRecommendation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tblTotal"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChart"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_margin="8dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txtHighLevel"
+                            style="@style/FirstTimeSignInText"
+                            android:text="High Level Carbon Emission Source"
+                            android:textStyle="bold" />
+
+                        <TableLayout
+                            android:id="@+id/tblHighLevel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp">
+
+                            <TableRow
+                                android:id="@+id/rowHighLevelNumber1"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconHighLevelNumber1"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtHighLevelNumber1"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentHighLevelNumber1"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowHighLevelNumber2"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconHighLevelNumber2"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtHighLevelNumber2"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentHighLevelNumber2"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowHighLevelNumber3"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconHighLevelNumber3"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtHighLevelNumber3"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentHighLevelNumber3"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowHighLevelNumber4"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconHighLevelNumber4"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtHighLevelNumber4"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+                                <TextView
+                                    android:id="@+id/percentHighLevelNumber4"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+                        </TableLayout>
+
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/btnShowRecommendation"
+                    style="@style/FirstTimeSignInButtonSubmit"
+                    android:text="Show Recommendations"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutResultHouse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TableLayout
+                    android:id="@+id/tblTotalHouse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtTotalHouse"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:paddingHorizontal="8dp"
+                            android:text="Your Total Carbon Emission is : " />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/lblTotalHouseEmission"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:text="meters cube "
+                            android:textAlignment="center"
+                            android:textSize="16sp"/>
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollViewResultHouse"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintBottom_toTopOf="@id/btnHouseReturn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tblTotalHouse"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChartHouse"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_margin="8dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txtHouseHighLevel"
+                            style="@style/FirstTimeSignInText"
+                            android:text="High Level Carbon Emission Source"
+                            android:textStyle="bold" />
+
+                        <TableLayout
+                            android:id="@+id/tblHighLevelHouse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp">
+
+                            <TableRow
+                                android:id="@+id/rowHouseHighLevelNumber1"
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconHouseHighLevelNumber1"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtHouseHighLevelNumber1"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentHouseHighLevelNumber1"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowHouseHighLevelNumber2"
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconHouseHighLevelNumber2"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtHouseHighLevelNumber2"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentHouseHighLevelNumber2"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowHouseHighLevelNumber3"
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconHouseHighLevelNumber3"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtHouseHighLevelNumber3"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentHouseHighLevelNumber3"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowHouseHighLevelNumber4"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconHouseHighLevelNumber4"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtHouseHighLevelNumber4"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentHouseHighLevelNumber4"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/btnHouseReturn"
+                    style="@style/FirstTimeSignInButtonSubmit"
+                    android:text="BACK"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutResultFood"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <TableLayout
+                    android:id="@+id/tblTotalFood"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtTotalFood"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="8dp"
+                            android:text="Your Total Carbon Emission in Food is : " />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/lblTotalFoodEmission"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:text="meters cube "
+                            android:textAlignment="center"
+                            android:textSize="24dp" />
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollViewResultFood"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintBottom_toTopOf="@id/btnFoodReturn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tblTotalFood"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChartFood"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_margin="8dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txtFoodHighLevel"
+                            style="@style/FirstTimeSignInText"
+                            android:text="High Level Carbon Emission Source"
+                            android:textStyle="bold" />
+
+                        <TableLayout
+                            android:id="@+id/tblHighLevelFood"
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:id="@+id/rowFoodHighLevelNumber1"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconFoodHighLevelNumber1"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtFoodHighLevelNumber1"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentFoodHighLevelNumber1"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFoodHighLevelNumber2"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconFoodHighLevelNumber2"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtFoodHighLevelNumber2"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentFoodHighLevelNumber2"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFoodHighLevelNumber3"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconFoodHighLevelNumber3"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtFoodHighLevelNumber3"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentFoodHighLevelNumber3"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFoodHighLevelNumber4"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconFoodHighLevelNumber4"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtFoodHighLevelNumber4"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentFoodHighLevelNumber4"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/btnFoodReturn"
+                    style="@style/FirstTimeSignInButtonSubmit"
+                    android:text="BACK"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutResultVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <TableLayout
+                    android:id="@+id/tblTotalVehicle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtTotalVehicle"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="8dp"
+                            android:text="Your Total Carbon Emission in Vehicle is : " />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/lblTotalVehicleEmission"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:text="meters cube "
+                            android:textAlignment="center"
+                            android:textSize="24sp" />
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollViewResultVehicle"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintBottom_toTopOf="@id/btnVehicleReturn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tblTotalVehicle"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChartVehicle"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_margin="8dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txtVehicleHighLevel"
+                            style="@style/FirstTimeSignInText"
+                            android:text="High Level Carbon Emission Source"
+                            android:textStyle="bold" />
+
+                        <TableLayout
+                            android:id="@+id/tblHighLevelVehicle"
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:id="@+id/rowVehicleHighLevelNumber1"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconVehicleHighLevelNumber1"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtVehicleHighLevelNumber1"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentVehicleHighLevelNumber1"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowVehicleHighLevelNumber2"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconVehicleHighLevelNumber2"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtVehicleHighLevelNumber2"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentVehicleHighLevelNumber2"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowVehicleHighLevelNumber3"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconVehicleHighLevelNumber3"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtVehicleHighLevelNumber3"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentVehicleHighLevelNumber3"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+                        </TableLayout>
+
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/btnVehicleReturn"
+                    style="@style/FirstTimeSignInButtonSubmit"
+                    android:text="BACK"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutResultTravel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <TableLayout
+                    android:id="@+id/tblTotalTravel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtTotalTravel"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="8dp"
+                            android:text="Your Total Carbon Emission in Travel is : " />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/lblTotalTravelEmission"
+                            style="@style/FirstTimeSignInText"
+                            android:layout_weight="1"
+                            android:text="meters cube "
+                            android:textAlignment="center"
+                            android:textSize="24sp" />
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollViewResultTravel"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintBottom_toTopOf="@id/btnTravelReturn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tblTotalTravel"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChartTravel"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_margin="8dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txtTravelHighLevel"
+                            style="@style/FirstTimeSignInText"
+                            android:text="High Level Carbon Emission Source"
+                            android:textStyle="bold" />
+
+                        <TableLayout
+                            android:id="@+id/tblHighLevelTravel"
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber1"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber1"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber1"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber1"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber2"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber2"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber2"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber2"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber3"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber3"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber3"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber3"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber4"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber4"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber4"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber4"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber5"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber5"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber5"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber5"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber6"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber6"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber6"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber6"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber7"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber7"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber7"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber7"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber8"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber8"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber8"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber8"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTravelHighLevelNumber9"
+                                
+                                style="@style/ResultRow">
+
+                                <ImageView
+                                    android:id="@+id/iconTravelHighLevelNumber9"
+                                    style="@style/ResultIcon"
+                                    android:src="@drawable/icon_electricity" />
+
+                                <TextView
+                                    android:id="@+id/txtTravelHighLevelNumber9"
+                                    style="@style/ResultText"
+                                    android:text="House" />
+
+
+                                <TextView
+                                    android:id="@+id/percentTravelHighLevelNumber9"
+                                    style="@style/ResultTextPercentage"
+                                    android:text="00.00%" />
+                            </TableRow>
+                        </TableLayout>
+
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/btnTravelReturn"
+                    style="@style/FirstTimeSignInButtonSubmit"
+                    android:text="BACK"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            -->
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLoading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/fake_loading_screen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Calculating Carbon Footprint"
+                    android:textAlignment="center"
+                    android:textSize="24dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutUserProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <ImageView
+                android:id="@+id/appIconUserProfile"
+                android:layout_width="match_parent"
+                android:layout_height="187dp"
+                android:src="@drawable/ecometrics_registration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutUserProfile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/btnUpdateUserProfile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appIconUserProfile">
+
+                <TextView
+                    style="@style/EditProfileTextTitle"
+                    android:text="Edit Profile" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableLayout
+                        style="@style/RegistrationField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/colorPrimary" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                style="@style/EditProfileText"
+                                android:text="Did you move in new location?" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/btnLocationYes"
+                                style="@style/EditProfileButtons"
+                                android:text="Yes" />
+
+                            <Button
+                                android:id="@+id/btnLocationNo"
+                                style="@style/EditProfileButtons"
+                                android:text="No" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <TextView
+                                style="@style/EditProfileText"
+                                android:text="Where do you Live now?" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowRegion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <Spinner
+                                android:id="@+id/spinnerRegion"
+                                style="@style/EditProfileSpinner" />
+
+                            <TextView
+                                android:id="@+id/txtRegionError"
+                                android:layout_weight=".2"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/red" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowProvince"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <Spinner
+                                android:id="@+id/spinnerProvince"
+                                style="@style/EditProfileSpinner" />
+
+                            <TextView
+                                android:id="@+id/txtProvinceError"
+                                android:layout_weight=".2"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/red" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowMunicipality"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <Spinner
+                                android:id="@+id/spinnerMunicipality"
+                                style="@style/EditProfileSpinner" />
+
+                            <TextView
+                                android:id="@+id/txtMunicipalityError"
+                                android:layout_weight=".2"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/red" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/colorPrimary" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/EditProfileText"
+                                android:text="Is there a change in the number of people in your household?" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/btnHouseMemberYes"
+                                style="@style/EditProfileButtons"
+                                android:text="Yes" />
+
+                            <Button
+                                android:id="@+id/btnHouseMemberNo"
+                                style="@style/EditProfileButtons"
+                                android:text="No" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowHouse"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <TextView
+                                style="@style/EditProfileText"
+                                android:text="How many are you in the house now?" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowHouseMember"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <EditText
+                                android:id="@+id/txtHouseMember"
+                                style="@style/EditProfileEditText"
+                                android:inputType="number" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/colorPrimary" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                style="@style/EditProfileText"
+                                android:text="Is there a change in the number of your vehicle?" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/btnVehicleYes"
+                                style="@style/EditProfileButtons"
+                                android:text="Yes" />
+
+                            <Button
+                                android:id="@+id/btnVehicleNo"
+                                style="@style/EditProfileButtons"
+                                android:text="No" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/colorPrimary" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                style="@style/EditProfileText"
+                                android:text="Is there a change in your characteristic?" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/btnStatusYes"
+                                style="@style/EditProfileButtons"
+                                android:text="Yes" />
+
+                            <Button
+                                android:id="@+id/btnStatusNo"
+                                style="@style/EditProfileButtons"
+                                android:text="No" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <TextView
+                                style="@style/EditProfileText"
+                                android:text="What is your characteristic now?" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowStatusType"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <Spinner
+                                android:id="@+id/spinnerUserType"
+                                style="@style/EditProfileSpinner"
+                                android:entries="@array/spinner_status" />
+
+                            <TextView
+                                android:id="@+id/txtUserTypeError"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/red" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/colorPrimary" />
+                        </TableRow>
+                    </TableLayout>
+                </ScrollView>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnUpdateUserProfile"
+                style="@style/RegistrationButton"
+                android:layout_margin="16dp"
+                android:text="Update"
+                app:backgroundTint="@color/colorPrimary"
+                app:cornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutVehicle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/appIconVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="187dp"
+                android:src="@mipmap/user_profile_temporary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/btnSubmitVehicle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appIconVehicle">
+
+                <TextView
+                    style="@style/EditProfileVehicleTextTitle"
+                    android:text="Vehicle" />
+
+                <Spinner
+                    android:id="@+id/spinnerCarName"
+                    style="@style/EditProfileVehicleSpinner" />
+
+                <LinearLayout
+                    android:id="@+id/rowNewVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="24dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:visibility="visible">
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dp"
+                                    android:text="What is the name for this vehicle?"
+                                    android:textSize="20dp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <EditText
+                                    android:id="@+id/txtVehicleName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:focusable="auto"
+                                    android:hint="Enter Vehicle name here"
+                                    android:inputType="text"
+                                    android:textColor="@color/black" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dp"
+                                    android:text="What kind of vehicle?"
+                                    android:textSize="20dp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <Spinner
+                                    android:id="@+id/spinnerCarType"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="48dp"
+                                    android:layout_weight=".8"
+                                    android:background="@drawable/rounded_background_spinner" />
+
+                                <TextView
+                                    android:id="@+id/txtCarTypeError"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight=".2"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/red" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dp"
+                                    android:text="What is the transmission of the vehicle?"
+                                    android:textSize="20dp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <Spinner
+                                    android:id="@+id/spinnerTransmissionType"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="48dp"
+                                    android:layout_weight=".8"
+                                    android:background="@drawable/rounded_background_spinner" />
+
+                                <TextView
+                                    android:id="@+id/txtTransmissionTypeError"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight=".2"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/red" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dp"
+                                    android:text="What is the size of the vehicle?"
+                                    android:textSize="20dp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <Spinner
+                                    android:id="@+id/spinnerSizeType"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="48dp"
+                                    android:layout_weight=".8"
+                                    android:background="@drawable/rounded_background_spinner" />
+
+                                <TextView
+                                    android:id="@+id/txtSizeTypeError"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight=".2"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/red" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dp"
+                                    android:text="Do you know the efficiency of this vehicle?"
+                                    android:textSize="20dp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnEfficiencyYes"
+                                    android:layout_width="0dip"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/grey"
+                                    android:text="Yes"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <Button
+                                    android:id="@+id/btnEfficiencyNo"
+                                    android:layout_width="0dip"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/grey"
+                                    android:text="No"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowEfficiency"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <EditText
+                                        android:id="@+id/txtEfficiency"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight=".9"
+                                        android:ems="10"
+                                        android:focusable="auto"
+                                        android:hint="Enter Vehicle Efficiency Here"
+                                        android:inputType="numberDecimal"
+                                        android:textColor="@color/black" />
+
+                                    <TextView
+                                        android:layout_width="75dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="center"
+                                        android:text="km/L"
+                                        android:textSize="20dp" />
+                                </LinearLayout>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dp"
+                                    android:text="What type of fuel do you use?"
+                                    android:textSize="20dp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <Spinner
+                                    android:id="@+id/spinnerGasType"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="48dp"
+                                    android:background="@drawable/rounded_background_spinner"
+                                    android:entries="@array/spinner_car_gas_type" />
+
+                                <TextView
+                                    android:id="@+id/txtGasTypeError"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/red" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dp"
+                                    android:text="What is the odometer reading of this vehicle in kilometer?"
+                                    android:textSize="20dp" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <EditText
+                                    android:id="@+id/txtOdometer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:hint="Enter the total kilometer Here"
+                                    android:inputType="number|numberDecimal" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblVehicleEmission"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="16dp"
+                                    android:visibility="visible" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblVehicleTotalEmission"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textSize="16dp"
+                                    android:visibility="visible" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/btnInsertVehicle"
+                                    style="@style/RegistrationButton"
+                                    android:text="INSERT"
+                                    android:textAlignment="center"
+                                    app:backgroundTint="@color/colorPrimary"
+                                    app:cornerRadius="12dp" />
+                            </TableRow>
+                        </TableLayout>
+                    </ScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rowVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="24dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:visibility="visible">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:visibility="visible">
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    style="@style/EditProfileVehicleText"
+                                    android:text="Name: " />
+
+                                <TextView
+                                    android:id="@+id/txtVehicleNameExisting"
+                                    style="@style/EditProfileVehicleEditText" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <TextView
+                                    style="@style/EditProfileVehicleText"
+                                    android:text="Model: " />
+
+                                <TextView
+                                    android:id="@+id/txtVehicleModelExisting"
+                                    style="@style/EditProfileVehicleEditText" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <TextView
+                                    style="@style/EditProfileVehicleText"
+                                    android:text="Transmission: " />
+
+                                <TextView
+                                    android:id="@+id/txtVehicleTransmisisonExisting"
+                                    style="@style/EditProfileVehicleEditText" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp">
+
+                                <TextView
+                                    style="@style/EditProfileVehicleText"
+                                    android:text="Size: " />
+
+                                <TextView
+                                    android:id="@+id/txtVehicleSizeExisting"
+                                    style="@style/EditProfileVehicleEditText" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    style="@style/EditProfileVehicleText"
+                                    android:text="Odometer: " />
+
+                                <TextView
+                                    android:id="@+id/txtVehicleOdometerExisting"
+                                    style="@style/EditProfileVehicleEditText" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight=".1"
+                                    android:paddingBottom="5dp"
+                                    android:text="km"
+                                    android:textColor="@color/greenBackgroundLight"
+                                    android:textSize="20dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/EditProfileVehicleText"
+                                    android:text="What type of fuel do you use?" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp">
+
+                                <Spinner
+                                    android:id="@+id/spinnerGasTypeExisting"
+                                    style="@style/EditProfileVehicleSpinner"
+                                    android:layout_width="360dp"
+                                    android:entries="@array/spinner_car_gas_type" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btnUpdateVehicle"
+                                    style="@style/EditProfileVehicleButtons"
+                                    android:text="Update" />
+
+                                <Button
+                                    android:id="@+id/btnDeleteVehicle"
+                                    style="@style/EditProfileVehicleButtons"
+                                    android:backgroundTint="@color/redLight"
+                                    android:text="Delete" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowDelete"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    style="@style/EditProfileVehicleText"
+                                    android:text="Are you sure you want to delete this vehicle?" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowDeleteButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <Button
+                                    android:id="@+id/btnDeleteYes"
+                                    style="@style/EditProfileVehicleButtons"
+                                    android:text="Yes" />
+
+                                <Button
+                                    android:id="@+id/btnDeleteNo"
+                                    style="@style/EditProfileVehicleButtons"
+                                    android:text="No" />
+                            </TableRow>
+
+                        </TableLayout>
+                    </ScrollView>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btnSubmitVehicle"
+                style="@style/RegistrationButton"
+                android:layout_margin="16dp"
+                android:text="DONE"
+                android:textAlignment="center"
+                app:backgroundTint="@color/colorPrimary"
+                app:cornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

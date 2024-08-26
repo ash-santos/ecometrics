@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutRecommendation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableLayout
+                android:id="@+id/tblTitleRecommendation"
+                style="@style/RegistrationField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="187dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/app_icon_temporary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="32dp"
+                        android:text="ECOMETRICS"
+                        android:textAlignment="center"
+                        android:textSize="24dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/app_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </TableRow>
+            </TableLayout>
+
+            <View
+                android:id="@+id/viewRecommendation"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tblTitleRecommendation" />
+
+            <LinearLayout
+                android:id="@+id/tblRecommendation"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewRecommendation"
+                app:layout_constraintBottom_toTopOf="@id/btnToMainMenu"
+                android:visibility="visible">
+
+                <TableLayout
+                    android:id="@+id/noEmission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_light"
+                            android:padding="8dp"
+                            android:text="Congrats your Emission is in low level, keep it up!!"
+                            android:textSize="16dp"
+                            android:textStyle="bold"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtRecommendation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_light"
+                            android:padding="8dp"
+                            android:text="To decrease you carbon emission, you can do the following :"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tblRecommend">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TableLayout
+                            android:id="@+id/HouseRecommendationField"
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:visibility="visible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="House Emission"
+                                    android:textAlignment="center"
+                                    android:textSize="24dp"
+                                    android:textColor="@color/emeraldGreen"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowElectricityRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Electricity:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowElectricityRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Turn off all lights and electronics when not in use or use smart power strips to avoid vampire loads. Switch to LED bulbs and energy-efficient appliances and products."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowElectricityRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Switch to LED bulbs and energy-efficient appliances and products."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowCharcoalRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Charcoal:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowCharcoalRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Consider switching to cleaner cooking fuels like LPG gas, biogas, or improved cookstoves with lower emissions. If charcoal is essential, use it sparingly and only for specific tasks."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowCharcoalRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Use efficient cooking methods like pressure cookers, cover pots while cooking, and avoid unnecessary preheating."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFirewoodRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Firewood:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFirewoodRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Start with small kindling and build the fire gradually. Use proper airflow to maintain a hot, clean-burning fire. Avoid using accelerants like gasoline, which release harmful toxins."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFirewoodRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Match the fireplace or stove size to the firewood length and amount. Overfilling can suffocate the fire and lead to incomplete combustion, increasing emissions."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowLPGRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In LPG:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowLPGRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Use the right size pots for your burners and keep the lid on while cooking. Check for leaks in your pipes, burners, and regulators and fix them as soon as possible"
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowLPGRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Check for leaks in your pipes, burners, and regulators and fix them as soon as possible"
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:visibility="invisible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/houseEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/electricEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/charcoalEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lpgEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/firewoodEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            android:id="@+id/FoodRecommendationField"
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:visibility="visible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Food Emission"
+                                    android:textAlignment="center"
+                                    android:textSize="24dp"
+                                    android:textColor="@color/emeraldGreen"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowMeatRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Meat:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowMeatRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Turn off all lights and electronics when not in use or use smart power strips to avoid vampire loads. Switch to LED bulbs and energy-efficient appliances and products."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowMeatRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Switch to LED bulbs and energy-efficient appliances and products."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFishRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Fish:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFishRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Consider switching to cleaner cooking fuels like Mollusks gas, biogas, or improved cookstoves with lower emissions. If Fish is essential, use it sparingly and only for specific tasks."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowFishRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Use efficient cooking methods like pressure cookers, cover pots while cooking, and avoid unnecessary preheating."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowCrustaceansRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Crustaceans:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowCrustaceansRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Start with small kindling and build the fire gradually. Use proper airflow to maintain a hot, clean-burning fire. Avoid using accelerants like gasoline, which release harmful toxins."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowCrustaceansRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Match the fireplace or stove size to the Crustaceans length and amount. Overfilling can suffocate the fire and lead to incomplete combustion, increasing emissions."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowMollusksRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Mollusks:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowMollusksRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Use the right size pots for your burners and keep the lid on while cooking. Check for leaks in your pipes, burners, and regulators and fix them as soon as possible"
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowMollusksRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Check for leaks in your pipes, burners, and regulators and fix them as soon as possible"
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:visibility="invisible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/foodEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/meatEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/fishEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/crustaceansEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/mollusksEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            android:id="@+id/VehicleRecommendationField"
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:visibility="visible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Vehicle Emission"
+                                    android:textAlignment="center"
+                                    android:textSize="24dp"
+                                    android:textColor="@color/emeraldGreen"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowVehicleRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Vehicle:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowVehicleRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Combine errands into fewer trips, avoid rush hour traffic, and choose direct routes to minimize distance driven."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowVehicleRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="For short trips and errands, consider ditching the car and opting for greener alternatives. Walking and cycling are not only emission-free but also provide health benefits."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:visibility="invisible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/vehicleEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/dieselEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/unleadedEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/premiumEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            android:id="@+id/TravelRecommendationField"
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:visibility="visible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Travel Emission"
+                                    android:textAlignment="center"
+                                    android:textSize="24dp"
+                                    android:textColor="@color/emeraldGreen"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTransportationRecommendation"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="In Travel:"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTransportationRecommendation1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="Plan your errands efficiently to minimize the number of public transport journeys you take."
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/rowTransportationRecommendation2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="⋅"
+                                    android:textAlignment="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.95"
+                                    android:fontFamily="@font/inter_light"
+                                    android:text="For smaller trips within walking or biking distance, ditch the bus or train and get some exercise!"
+                                    android:textAlignment="textStart"
+                                    android:textSize="16dp" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:visibility="invisible">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/travelEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tricycleEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/pujEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/epujEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/epujaEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/pubEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/pubeEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/pubaEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/taxiEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/uvexpressEmission"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="4dp" />
+                            </TableRow>
+                        </TableLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tblTitleActivity"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewRecommendation"
+                app:layout_constraintBottom_toTopOf="@id/btnToMainMenu"
+                tools:visibility="gone">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_light"
+                            android:padding="8dp"
+                            android:text="You can also join one of these Organization :"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tblActivities"
+                    style="@style/RegistrationField"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerOffsetView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:scrollbars="vertical" />
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/btnToMainMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <Button
+                        android:id="@+id/btnMainMenu"
+                        style="@style/FirstTimeSignInButtons"
+                        android:text="Main Menu" />
+
+                    <Button
+                        android:id="@+id/btnOption"
+                        style="@style/FirstTimeSignInButtons"
+                        android:text="Offset Activity" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

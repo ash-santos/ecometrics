@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RegistrationField">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="RegistrationButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="SignInButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="LoginGoogleButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+    <style name="BottomNavigationView.ActiveText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/active_text_color</item>
+    </style>
+    <style name="BottomNavigationView.InactiveText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/inactive_text_color</item>
+    </style>
+    <style name="TextColor">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+    <style name="FirstTimeSignInButtons">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+
+    </style>
+    <style name="FirstTimeSignInButtonSubmit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">12dp</item>
+
+    </style>
+    <style name="FirstTimeSignInText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+<!--        <item name="android:layout_weight">1</item>-->
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="FirstTimeSignInTextTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="FirstTimeSignInEditText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/greenBackground</item>
+    </style>
+    <style name="FirstTimeSignInSpinner">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_span">1</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="FirstTimeSignInSpinnerHalfSize">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_weight">.5</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="DailyViewText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">.4</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="DailyEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">.6</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/greenBackground</item>
+    </style>
+    <style name="FirstTimeSignInResultText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">.4</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="FirstTimeSignInResultTextPercentage">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">.45</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="FirstTimeSignInResultIcon">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_weight">.15</item>
+    </style>
+
+    <style name="MainCategoryEmissionTitles">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ResultText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">.55</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ResultTextPercentage">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">.30</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ResultIcon">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">.15</item>
+        <item name="android:background">@color/newGreen</item>
+    </style>
+
+    <style name="ResultRow">
+        <item name="android:background">@drawable/main_category_box</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <!-- styles for the intro activity -->
+    <style name="IntroText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="IntroIcon">
+        <item name="android:tint">@color/greenBackgroundDarker</item>
+    </style>
+    <style name="IntroIcon3">
+        <item name="android:tint">@color/greenBackgroundDarker</item>
+        <item name="android:layout_width">115dp</item>
+        <item name="android:layout_height">115dp</item>
+    </style>
+    <style name="IntroButton">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginStart">32dp</item>
+    <item name="android:layout_marginTop">32dp</item>
+    <item name="android:layout_marginEnd">32dp</item>
+    <item name="android:padding">8dp</item>
+    <item name="android:textAlignment">center</item>
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:backgroundTint">@color/greenBackground</item>
+    <item name="android:textSize">18sp</item>
+    <item name="cornerRadius">5dp</item>
+    </style>
+
+    <style name="SignInViewText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="SignInViewButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="SignInViewEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+
+    <style name="RegistrationViewText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="RegistrationViewButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackgroundDarker</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="RegistrationViewEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+
+    <style name="ProfilingTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ProfilingText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="ProfilingEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+    <style name="ProfilingSpinner">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_span">1</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="FirstTimeSignInHouseText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="FirstTimeSignInHouseButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackgroundDarker</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="FirstTimeSignInHouseEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+    <style name="FirstTimeSignInHouseTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="FirstTimeSignInHouseButtonHalf">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+
+    </style>
+    <style name="FirstTimeSignInHouseButtonSubmit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+
+    </style>
+
+    <style name="FirstTimeSignInFoodText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="FirstTimeSignInFoodButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackgroundDarker</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="FirstTimeSignInFoodEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+    <style name="FirstTimeSignInFoodTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="FirstTimeSignInFoodButtonHalf">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+
+    </style>
+    <style name="FirstTimeSignInFoodButtonSubmit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+
+    </style>
+    <style name="FirstTimeSignInFoodSpinner">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_span">1</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="FirstTimeSignInVehicleText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="FirstTimeSignInVehicleButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackgroundDarker</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="FirstTimeSignInVehicleEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+    <style name="FirstTimeSignInVehicleTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="FirstTimeSignInVehicleButtonHalf">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+
+    </style>
+    <style name="FirstTimeSignInVehicleButtonSubmit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+
+    </style>
+    <style name="FirstTimeSignInVehicleSpinner">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_span">1</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="FirstTimeSignInVehicleSpinnerHalfSize">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_weight">.5</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="FirstTimeSignInTransportationText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="FirstTimeSignInTransportationButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackgroundDarker</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="FirstTimeSignInTransportationEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+    <style name="FirstTimeSignInTransportationTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="FirstTimeSignInTransportationButtonHalf">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+
+    </style>
+    <style name="FirstTimeSignInTransportationButtonSubmit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">5dp</item>
+
+    </style>
+    <style name="FirstTimeSignInTransportationSpinner">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_span">1</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="FirstTimeSignInTransportationSpinnerHalfSize">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_weight">.5</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- styles for the main activity -->
+    <!-- styles for the main activity report -->
+    <style name="MainCategoryEmissionTotal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+    <style name="MainCategoryEmissionTotalUnit">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="MainCategoryEmissionLayout">
+        <item name="android:background">@drawable/main_category_box</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="MainCategoryEmissionName">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">.35</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:layout_marginStart">4sp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/emeraldGreen</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="MainCategoryEmissionEmission">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">.3</item>
+        <item name="android:text">1000000</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/emeraldGreen</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="MainCategoryEmissionUnitLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginHorizontal">2sp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">end|center_vertical</item>
+    </style>
+    <style name="MainCategoryEmissionUnit">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/emeraldGreen</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="MainCategoryEmissionDash">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">-</item>
+        <item name="android:layout_marginHorizontal">2sp</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/emeraldGreen</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="MainCategoryEmissionPercentage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/emeraldGreen</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="MainReturnButtonLayoutResult">
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">RETURN</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="MainCategoryEmissions">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:text">Total Emission this</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="ActivityMainReportText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_light</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="ActivityMainReportSpinner">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_span">1</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="ActivityMainReportButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">5dp</item>
+
+    </style>
+
+    <!-- styles for the main activity profile -->
+    <style name="ActivityMainProfileIcon">
+        <item name="android:layout_width">5dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">.5</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:tint">@color/greenBackgroundDarker</item>
+    </style>
+    <style name="ActivityMainProfileText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_weight">.5</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/greenBackgroundDarker2</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <!-- styles for the main activity profile edit password -->
+    <style name="ActivityMainProfileEditPasswordText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <!--        <item name="android:layout_weight">1</item>-->
+        <item name="android:paddingBottom">5dp</item>
+
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:paddingLeft">30sp</item>
+    </style>
+    <style name="ActivityMainProfileEditPasswordTextTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ActivityMainProfileEditPasswordEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+    <style name="ActivityMainProfileEditPasswordButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">2dp</item>
+    </style>
+
+    <!-- styles for the main activity map -->
+    <!-- nah its good enough lmao eksdi -->
+    <style name="EditProfileTextTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EditProfileText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <!--        <item name="android:layout_weight">1</item>-->
+        <item name="android:paddingBottom">5dp</item>
+
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+    <style name="EditProfileEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+    <style name="EditProfileButtons">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>y
+    <style name="EditProfileSpinner">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="EditProfileVehicleText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">.4</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/greenBackgroundLight</item>
+    </style>
+    <style name="EditProfileVehicleEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">.6</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/greenBackgroundLight</item>
+        <item name="android:background">@drawable/background_box</item>
+    </style>
+    <style name="EditProfileVehicleSpinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="EditProfileVehicleTextTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EditProfileVehicleButtons">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/greenBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- styles for the privacy policy -->
+    <style name="PrivacyPolicyHeading1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PrivacyPolicyHeading2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginVertical">4dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PrivacyPolicyHeading3">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginVertical">2dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PrivacyPolicyIntroduction">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginVertical">4dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PrivacyPolicyContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginVertical">2dp</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

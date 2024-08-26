@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLoading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/loading_screen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp"
+                    app:srcCompat="@drawable/ecometric_calculating" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Loading"
+                    android:textAlignment="center"
+                    android:textSize="24dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutReport"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/btnReturn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <TableLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/greenBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="90dp"
+                    android:gravity="center">
+
+                    <TextView
+                        style="@style/MainCategoryEmissionTitles"
+                        android:text="Food Emission this" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8sp"
+                        android:entries="@array/date" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_span="2"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtMonthlyCarbonFootprint"
+                            style="@style/MainCategoryEmissionTotal"
+                            android:text="31.22" />
+
+                        <TextView
+                            android:id="@+id/txtMonthlyCarbonFootprintUnit"
+                            style="@style/MainCategoryEmissionTotalUnit"
+                            android:text="kg CO2e" />
+                    </LinearLayout>
+                </TableRow>
+
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/background_box"
+                    app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/barChart">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layoutEmissionNumber1"
+                            style="@style/MainCategoryEmissionLayout">
+
+                            <ImageView
+                                android:id="@+id/txtEmissionIconNumber1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/newGreen"
+                                app:srcCompat="@mipmap/new_icon_home" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionNameNumber1"
+                                        style="@style/MainCategoryEmissionName"
+                                        android:text="House" />
+
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionEmissionNumber1"
+                                        style="@style/MainCategoryEmissionEmission"
+                                        android:text="100" />
+
+                                    <LinearLayout style="@style/MainCategoryEmissionUnitLayout">
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionUnitNumber1"
+                                            style="@style/MainCategoryEmissionUnit"
+                                            android:text="kg CO2e" />
+
+                                        <TextView style="@style/MainCategoryEmissionDash" />
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionPercentageNumber1"
+                                            style="@style/MainCategoryEmissionPercentage"
+                                            android:text="199.99%" />
+                                    </LinearLayout>
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBarNumber1"
+                                        android:progressTint="@color/greenBackgroundLight"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:scaleY="4" />
+                                </TableRow>
+                            </TableLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutEmissionNumber2"
+                            style="@style/MainCategoryEmissionLayout">
+
+                            <ImageView
+                                android:id="@+id/txtEmissionIconNumber2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/newGreen"
+                                app:srcCompat="@mipmap/new_icon_home" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionNameNumber2"
+                                        style="@style/MainCategoryEmissionName"
+                                        android:text="House" />
+
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionEmissionNumber2"
+                                        style="@style/MainCategoryEmissionEmission"
+                                        android:text="100" />
+
+                                    <LinearLayout style="@style/MainCategoryEmissionUnitLayout">
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionUnitNumber2"
+                                            style="@style/MainCategoryEmissionUnit"
+                                            android:text="kg CO2e" />
+
+                                        <TextView style="@style/MainCategoryEmissionDash" />
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionPercentageNumber2"
+                                            style="@style/MainCategoryEmissionPercentage"
+                                            android:text="99.99%" />
+                                    </LinearLayout>
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBarNumber2"
+                                        android:progressTint="@color/greenBackgroundLight"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:scaleY="4" />
+                                </TableRow>
+                            </TableLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutEmissionNumber3"
+                            style="@style/MainCategoryEmissionLayout">
+
+                            <ImageView
+                                android:id="@+id/txtEmissionIconNumber3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/newGreen"
+                                app:srcCompat="@mipmap/new_icon_home" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionNameNumber3"
+                                        style="@style/MainCategoryEmissionName"
+                                        android:text="House" />
+
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionEmissionNumber3"
+                                        style="@style/MainCategoryEmissionEmission"
+                                        android:text="100" />
+
+                                    <LinearLayout style="@style/MainCategoryEmissionUnitLayout">
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionUnitNumber3"
+                                            style="@style/MainCategoryEmissionUnit"
+                                            android:text="kg CO2e" />
+
+                                        <TextView style="@style/MainCategoryEmissionDash" />
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionPercentageNumber3"
+                                            style="@style/MainCategoryEmissionPercentage"
+                                            android:text="99.99%" />
+                                    </LinearLayout>
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBarNumber3"
+                                        android:progressTint="@color/greenBackgroundLight"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:scaleY="4" />
+                                </TableRow>
+                            </TableLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutEmissionNumber4"
+                            style="@style/MainCategoryEmissionLayout">
+
+                            <ImageView
+                                android:id="@+id/txtEmissionIconNumber4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/newGreen"
+                                app:srcCompat="@mipmap/new_icon_home" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionNameNumber4"
+                                        style="@style/MainCategoryEmissionName"
+                                        android:text="House" />
+
+
+                                    <TextView
+                                        android:id="@+id/txtEmissionEmissionNumber4"
+                                        style="@style/MainCategoryEmissionEmission"
+                                        android:text="100" />
+
+                                    <LinearLayout style="@style/MainCategoryEmissionUnitLayout">
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionUnitNumber4"
+                                            style="@style/MainCategoryEmissionUnit"
+                                            android:text="kg CO2e" />
+
+                                        <TextView style="@style/MainCategoryEmissionDash" />
+
+                                        <TextView
+                                            android:id="@+id/txtEmissionPercentageNumber4"
+                                            style="@style/MainCategoryEmissionPercentage"
+                                            android:text="99.99%" />
+                                    </LinearLayout>
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBarNumber4"
+                                        android:progressTint="@color/greenBackgroundLight"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:scaleY="4" />
+                                </TableRow>
+                            </TableLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </ScrollView>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnReturn"
+            style="@style/MainReturnButtonLayoutResult"
+            app:backgroundTint="@color/greenBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="red">#FF0000</color>
+    <color name="redLight">#80FF0000</color>
+    <color name="redTransparent">#00FF0000</color>
+    <color name="yellow">#fff317</color>
+    <color name="yellowLight">#80fff317</color>
+    <color name="yellowTransparent">#00fff317</color>
+    <color name="high">#DD3124</color>
+    <color name="low">#2B9A43</color>
+    <color name="grey">#B1B1B1</color>
+    <color name="colorPrimary">#2B9A43</color>
+    <color name="colorSecondary">#8AF3A1</color>
+        <color name="active_text_color">#8AF3A1</color>
+        <color name="inactive_text_color">#2B9A43</color>
+    <color name="underline">#D8D6D6</color>
+    <color name="deletecolor">#DD3124</color>
+    <color name="archiveColor">#3AE015</color>
+    <color name="white">#ffffff</color>
+    <color name="greenBackgroundDarker2">#34865b</color>
+    <color name="greenBackgroundDarker">#31b470</color>
+    <color name="greenBackground">#4cc485</color>
+    <color name="greenBackgroundLight">#68cd97</color>
+    <color name="whiteText">#ffffff</color>
+
+    <color name="newGreen">#00864e</color>
+    <color name="emeraldGreen">#046307</color>
+
+
+
+    <color name="orange">#f5a15d</color>
+</resources>

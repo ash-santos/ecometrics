@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="187dp"
+                app:srcCompat="@drawable/ecometrics_registration" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp">
+
+                    <EditText
+                        android:id="@+id/txtFirstName"
+                        style="@style/RegistrationViewEditText"
+                        android:hint="@string/first_name"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/txtLastName"
+                        style="@style/RegistrationViewEditText"
+                        android:hint="@string/last_name"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/txtEmail"
+                        style="@style/RegistrationViewEditText"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress" />
+
+                    <EditText
+                        android:id="@+id/txtPassword"
+                        style="@style/RegistrationViewEditText"
+                        android:hint="@string/password"
+                        android:inputType="textPassword" />
+
+                    <EditText
+                        android:id="@+id/txtConfirmPassword"
+                        style="@style/RegistrationViewEditText"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPassword" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/ckbPrivacyPolicy"
+                            android:layout_width="0dp"
+                            android:layout_height="22sp"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="I have read and agree to Privacy Policy"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnSignUp"
+                        style="@style/RegistrationViewButton"
+                        android:visibility="gone"
+                        android:text="@string/sign_up" />
+
+                    <View
+                        android:id="@+id/horizontalLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/yourOtherViewId"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="48dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAlreadyAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:text="Already have an account?"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txtSignIn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:onClick="onClick"
+                            android:padding="4dp"
+                            android:text="Login"
+                            android:textColor="@color/greenBackground"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

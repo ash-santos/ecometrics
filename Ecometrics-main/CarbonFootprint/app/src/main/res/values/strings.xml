@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">CarbonFootprint</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="forgot_email" translatable="false">Enter your email address</string>
+    <string name="return_to_signin" translatable="false">Return To SignIn</string>
+    <string name="forgot_password" translatable="false">Submit</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="confirm_password" translatable="false">Confirm Password</string>
+    <string name="first_name" translatable="false">First Name</string>
+    <string name="last_name" translatable="false">Last Name</string>
+    <string name="sign_in" translatable="false">SIGN IN</string>
+    <string name="sign_up" translatable="false">SIGN UP</string>
+    <string name="disct_min" translatable="false">Disct. Minimum</string>
+    <string name="min" translatable="false">Minimum</string>
+    <string name="disct_rate" translatable="false">Disct. Rate</string>
+    <string name="rate" translatable="false">Rate</string>
+    <string name="unit_carbon" translatable="false">tCO2e</string>
+    <string name="unit_per_km" translatable="false">/km</string>
+    <string name="unit_per_kg" translatable="false">/kg</string>
+    <string name="unit_per_liter" translatable="false">/L</string>
+    <string name="unit_per_kilowatshour" translatable="false">/kwh</string>
+    <string name="currency" translatable="false">₱</string>
+    <string name="electricity" translatable="false">Electricity</string>
+    <string name="charcoal" translatable="false">Charcoal</string>
+    <string name="unleaded_gas" translatable="false">Unleaded Gas</string>
+    <string name="premium_gas" translatable="false">Premium Gas</string>
+    <string name="lpg" translatable="false">LPG</string>
+    <string name="diesel" translatable="false">Diesel</string>
+    <string name="firewood" translatable="false">Firewood</string>
+    <string name="transportation" translatable="false">Transportation</string>
+    <string name="tricycle" translatable="false">Tricycle</string>
+    <string name="puj" translatable="false">Public Utility Jeep</string>
+    <string name="epuj" translatable="false">Electric Public Utility Jeep</string>
+    <string name="epuja" translatable="false">Electric Public Utility Jeep w/ Aircon</string>
+    <string name="pub" translatable="false">Public Utility Bus</string>
+    <string name="pube" translatable="false">Public Utility Bus Economy</string>
+    <string name="puba" translatable="false">Public Utility Bus w/ Aircon</string>
+    <string name="setting" translatable="false">Setting</string>
+
+    <string name="create_new_account">NEW ACCOUNT</string>
+    <string name="default_web_client_id">YOUR_DEFAULT_WEB_CLIENT_ID</string>
+</resources>

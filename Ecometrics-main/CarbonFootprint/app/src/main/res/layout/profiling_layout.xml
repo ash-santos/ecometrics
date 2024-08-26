@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txtBgTop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/appIconUserProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ecometrics_registration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appIconUserProfile"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appIconUserProfile">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutUserProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/userProfilePageTitle"
+                    style="@style/ProfilingTitle"
+                    android:text="Profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ScrollView
+                    android:id="@+id/scrollViewUserProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/btnSubmitUserProfile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userProfilePageTitle">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutUserProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="vertical">
+
+                        <TableLayout
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblLocation"
+                                    style="@style/ProfilingTitle"
+                                    android:text="Where do you Live?" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <Spinner
+                                    android:id="@+id/spinnerRegion"
+                                    style="@style/ProfilingSpinner" />
+
+                                <TextView
+                                    android:id="@+id/txtRegionError"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/red" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <Spinner
+                                    android:id="@+id/spinnerProvince"
+                                    style="@style/ProfilingSpinner" />
+
+                                <TextView
+                                    android:id="@+id/txtProvinceError"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/red" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <Spinner
+                                    android:id="@+id/spinnerMunicipality"
+                                    style="@style/ProfilingSpinner" />
+
+                                <TextView
+                                    android:id="@+id/txtMunicipalityError"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/red" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblHouse"
+                                    style="@style/ProfilingText"
+                                    android:text="How many are you in the house?" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <EditText
+                                    android:id="@+id/txtHouseMember"
+                                    android:inputType="number"
+                                    style="@style/ProfilingEditText" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblCarNumber"
+                                    style="@style/ProfilingText"
+                                    android:text="How many vehicle do you have?" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <EditText
+                                    android:id="@+id/txtCarNumber"
+                                    android:inputType="number"
+                                    style="@style/ProfilingEditText"
+                                    />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TableLayout
+                            style="@style/RegistrationField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/lblStatus"
+                                    style="@style/ProfilingText"
+                                    android:text="What is your characteristic?" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <Spinner
+                                    android:id="@+id/spinnerUserType"
+                                    style="@style/ProfilingSpinner"
+                                    android:entries="@array/spinner_status" />
+
+                                <TextView
+                                    android:id="@+id/txtUserTypeError"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/red" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/btnSubmitUserProfile"
+                    style="@style/FirstTimeSignInButtonSubmit"
+                    android:text="SUBMIT"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

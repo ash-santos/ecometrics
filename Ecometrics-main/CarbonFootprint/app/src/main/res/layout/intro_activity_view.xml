@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutIntro1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/layoutIntro11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35000002">
+
+                <ImageView
+                    style="@style/IntroIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ecometrics_intro_1" />
+
+                <TextView
+
+                    style="@style/IntroText"
+                    android:text="EcoMetrics"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textSize="40sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_black" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_gray" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_gray" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnIntro1"
+                style="@style/IntroButton"
+                android:text="What is Ecometrics?"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutIntro2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imgIcon2"
+                android:layout_width="match_parent"
+                android:layout_height="287dp"
+                android:src="@drawable/ecometrics_intro_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnIntro2"
+                style="@style/IntroButton"
+                android:text="Next"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout22"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout22" />
+
+            <TextView
+                android:id="@+id/txtIntro2"
+                style="@style/IntroText"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="8dp"
+                android:text="Measure and reduce your carbon footprint with Ecometrics. Track, analyze, and improve your environmental impact starting today."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imgIcon2"
+                app:layout_constraintStart_toStartOf="@+id/imgIcon2"
+                app:layout_constraintTop_toBottomOf="@+id/imgIcon2" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_gray" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_black" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_gray" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutIntro3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/linearLayout31"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout311"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="20dp">
+
+                    <ImageView
+                        style="@style/IntroIcon3"
+                        android:src="@mipmap/new_icon_meat" />
+
+                    <TextView
+                        style="@style/IntroText"
+                        android:layout_marginLeft="10dp"
+                        android:text="Calculate carbon emissions based on food consumption amount or cost." />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="20dp">
+
+                    <ImageView
+                        style="@style/IntroIcon3"
+                        android:src="@mipmap/new_icon_bus_aircon" />
+
+                    <TextView
+                        style="@style/IntroText"
+                        android:layout_marginLeft="10dp"
+                        android:text="Calculate carbon emissions based on vehicle mileagse or amount spent on fuel." />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout313"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/IntroIcon3"
+                        android:src="@mipmap/new_icon_history" />
+
+                    <TextView
+                        style="@style/IntroText"
+                        android:layout_marginLeft="10dp"
+                        android:text="Suggestions for carbon offset activities and other features like daily calculation available after initial user-profiling." />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_gray" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_gray" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ellipse_black" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnIntro3"
+                style="@style/IntroButton"
+                android:text="Begin offsetting carbon emissions"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

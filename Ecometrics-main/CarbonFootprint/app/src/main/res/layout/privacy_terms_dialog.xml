@@ -1,0 +1,78 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/PrivacyPolicyHeading1"
+            android:text="Ecometrics App Privacy Agreement"/>
+
+        <TextView
+            style="@style/PrivacyPolicyIntroduction"
+            android:text="This Privacy Agreement (the 'Agreement') outlines the terms and conditions under which Ecometrics (the 'App') collects, uses, stores, and protects users' personal information, including location data. By using the Ecometrics App, you agree to the terms laid out in this Agreement."/>
+
+        <TextView
+            style="@style/PrivacyPolicyHeading2"
+            android:text="1. Information Collection:"/>
+
+        <TextView
+            style="@style/PrivacyPolicyHeading3"
+            android:text="a. Personal Information"/>
+
+        <TextView
+            style="@style/PrivacyPolicyContent"
+            android:text="The App may collect personal information such as name, email address, and user preferences to enhance user experience and provide personalized features."/>
+
+        <TextView
+            style="@style/PrivacyPolicyHeading3"
+            android:text="b. Location Data:"/>
+
+        <TextView
+            style="@style/PrivacyPolicyContent"
+            android:text="Ecometrics may access and collect location data to provide location-based services and relevant information."/>
+
+        <TextView
+            style="@style/PrivacyPolicyHeading2"
+            android:text="2. Information Usage:"/>
+
+        <TextView
+            style="@style/PrivacyPolicyHeading3"
+            android:text="a. Personal Information"/>
+
+        <TextView
+            style="@style/PrivacyPolicyContent"
+            android:text="Ecometrics utilizes personal information to enhance user experience, provide personalized content, and improve App functionality."/>
+
+        <TextView
+            style="@style/PrivacyPolicyHeading3"
+            android:text="b. Location Data:"/>
+
+        <TextView
+            style="@style/PrivacyPolicyContent"
+            android:text="Location data is used to offer location-based services, such as displaying local environmental information and recommending eco-friendly businesses."/>
+
+        <TextView
+            style="@style/PrivacyPolicyHeading2"
+            android:text="3. Data Security:"/>
+
+        <TextView
+            style="@style/PrivacyPolicyContent"
+            android:text="Ecometrics employs industry-standard security measures to protect user data from unauthorized access, disclosure, alteration, or destruction."/>
+
+        <TextView
+            style="@style/PrivacyPolicyHeading2"
+            android:text="4. Information Sharing:"/>
+
+        <TextView
+            style="@style/PrivacyPolicyContent"
+            android:text="Ecometrics does not sell, rent, or share personal information with third parties for marketing purposes without user consent."/>
+
+    </LinearLayout>
+
+</ScrollView>

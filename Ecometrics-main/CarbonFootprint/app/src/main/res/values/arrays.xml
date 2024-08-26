@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_month">
+        <item>Month</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string-array name="municipality">
+        <item>Abucay</item>
+        <item>Bagac</item>
+        <item>Balanga</item>
+        <item>Dinalupihan</item>
+        <item>Hermosa</item>
+        <item>Limay</item>
+        <item>Mariveles</item>
+        <item>Morong</item>
+        <item>Orani</item>
+        <item>Orion</item>
+        <item>Pilar</item>
+        <item>Samal</item>
+    </string-array>
+
+    <string-array name="spinner_car_gas_type">
+        <item>Choose a Fuel</item>
+        <item>Diesel</item>
+        <item>Premium</item>
+        <item>Unleaded</item>
+    </string-array>
+
+    <string-array name="date">
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+
+    <string-array name="spinner_status">
+        <item>Choose an Option</item>
+        <item>PWD</item>
+        <item>Student</item>
+        <item>Adult</item>
+        <item>Unemployed</item>
+        <item>Senior</item>
+        <item>None of the above</item>
+    </string-array>
+
+    <string-array name="spinner_transportation">
+        <item>Choose a Transportation</item>
+        <item>Tricycle</item>
+        <item>Jeep</item>
+        <item>Electric Jeep</item>
+        <item>Airconditioned Electric Jeep</item>
+        <item>Bus</item>
+        <item>Economy Bus</item>
+        <item>Airconditioned Bus</item>
+        <item>UV Express Van</item>
+        <item>UV Express Taxi</item>
+    </string-array>
+
+    <string-array name="spinner_food_category">
+        <item>Choose Category</item>
+        <item>Meat</item>
+        <item>Fish</item>
+        <item>Crustaceans</item>
+        <item>Mollusks</item>
+    </string-array>
+</resources>
